@@ -1,0 +1,35 @@
+<div class="container">
+  <% if user_signed_in? %>
+    <li class="bouton_log_out">
+      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+    </li>
+  <% else %>
+    <li class="bouton_log_in">
+      <%= link_to('Login', new_user_session_path)  %>
+    </li>
+  <% end %>
+
+  <%# if @comment.errors.messages.any? %>
+<!--    <ul>-->
+      <%# @comment.errors.messages.each do |key, errors| %>
+        <%# errors.each do |error| %>
+<!--          <li><%#= error %></li>-->
+        <%# end %>
+      <%# end %>
+<!--    </ul>-->
+  <%# end %>
+
+
+<%= form_tag home_index_path, methode: :post do  %>
+  <%= text_area_tag 'comment[content]' %>
+  <%= submit_tag "save" %>
+<% end %>
+
+<% @comments.each do |comment| %>
+    <ul class="comment_twitter">
+      <li><%= comment.user.email %></li>
+      <li><%= comment.content %></li>
+    </ul>
+
+<% end %>
+</div>
