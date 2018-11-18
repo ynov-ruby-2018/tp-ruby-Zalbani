@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 
-  has_many :comment
+  has_many :comment # Dommage... il manque juste le "s" à comment. Allez, je passe dessus...
 
 end
