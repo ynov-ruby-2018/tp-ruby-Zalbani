@@ -14,6 +14,8 @@ class HomeController < ApplicationController
     else
       @comment = "Impossible de saisir un champ vide"
       redirect_to root_path
+      # Si on fait le redirect à ce niveau... on ne pourra jamais voir la valeur de @comment.
+      # Mais c'est bien d'avoir pris en compte la validation
     end
 
 
