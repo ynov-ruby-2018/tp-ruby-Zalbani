@@ -5,6 +5,8 @@ class HomeController < ApplicationController
 
     #raise user.inspect
     #raise current_user.inspect
+    
+    # (remarque) Ne Jamais laisser trainer de code commenté SVP (/remarque)
   end
 
   def create
